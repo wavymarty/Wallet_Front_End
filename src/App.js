@@ -1,25 +1,56 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import ReactDOM from "react-dom/client";
+import React, {components} from 'react';
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ListUsers from './components/list-users.component';
+import Home from './components/home.component';
+import AddUser from './components/add-user.component';
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-header1">
+      <div class="page-header text-center">
+         <h2>User Registration App</h2>
+      </div>
       </header>
-    </div>
+      <div class="container-fluid">
+ <nav class="navbar bg-primary justify-contentcenter">
+ <div class="col-sm"></div>
+ <a href="/"
+ class="col-sm btn btn-outline-light"
+
+ role="button">
+ Home
+ </a>
+ <div class="col-sm"></div>
+ <a href="/list-all-users"
+ class="col-sm btn btn-outline-light"
+ role="button">
+ List All Users
+ </a>
+ <div class="col-sm"></div>
+ <a href="/add-user"
+ class="col-sm btn btn-outline-light"
+ role="button">
+ Add User
+ </a>
+ <div class="col-sm"></div>
+ </nav>
+ <br/>
+ <div className="container mt-3">
+ <BrowserRouter>
+ <Routes>
+ <Route  path="/"  index element={<Home/>} />
+ <Route  path="/list-all-users" element={<ListUsers/>} />
+ <Route  path="/add-user" element={<AddUser/>} />
+</Routes>
+ </BrowserRouter>
+ </div>
+ </div>
+ </div>
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
