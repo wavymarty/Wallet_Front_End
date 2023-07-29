@@ -4,7 +4,7 @@ class UserDataService {
  return http.get("/users");
  }
  createUser(user) {
- return http.post("/user/save", user);
+ return http.post("/createUser", user);
  }
  deleteUser(id) {
  return http.delete(`/user/delete/id/${id}`);
