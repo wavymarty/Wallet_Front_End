@@ -5,24 +5,24 @@ export default class AddUser extends Component {
         return (
             <div className="submit-form">
                 <div className="form-group">
-                    <label htmlFor="firstName">User Name  </label>
+                    <label htmlFor="userName">User Name </label>
                     <input
                         type="text"
 
                         className="form-control"
-                        id="firstName"
+                        id="userName"
                         required
-                        value={this.state.firstName}
+                        value={this.state.userName}
                         onChange={e => this.
-                            onChangeFirstName(e)}
-                        name="firstName" />
+                            onChangeUserName(e)}
+                        name="userName" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="lastName">Password</label>
-                    <input type="password" className="form-control" id="lastName" required value={this.state.lastName}
+                    <label htmlFor="password">Password</label>
+                    <input type="password" className="form-control" id="password" required value={this.state.password}
                         onChange={e => this.
-                            onChangeLastName(e)}
-                        name="lastName" />
+                            onChangePassword(e)}
+                        name="password" />
                 </div>
                 {/*      <div className="form-group">
                     <label htmlFor="age">Age</label>
@@ -60,62 +60,62 @@ export default class AddUser extends Component {
 
     constructor(props) {
         super(props);
-        this.onChangeFirstName = this.onChangeFirstName.
+        this.onChangeUserName = this.onChangeUserName.
             bind(this);
-        this.onChangeLastName = this.onChangeLastName.bind(this);
-        this.onChangeAge = this.onChangeAge.bind(this);
-        this.onChangeAddress = this.onChangeAddress.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
+       // this.onChangeAge = this.onChangeAge.bind(this);
+       // this.onChangeAddress = this.onChangeAddress.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.newUser = this.newUser.bind(this);
         this.state = {
             id: null,
-            firstName: "",
+            name: "",
 
-            age: "",
-            address: "",
-            createdDate: ""
+            password: "",
+            //address: "",
+           // createdDate: ""
         };
     }
-    onChangeFirstName(event) {
+    onChangeUserName(event) {
         this.setState({
-            firstName: event.target.value
+            userName: event.target.value
         });
     }
-    onChangeLastName(event) {
+    onChangePassword(event) {
         this.setState({
-            lastName: event.target.value
+            password: event.target.value
         });
     }
-    onChangeAge(event) {
-        this.setState({
-            age: event.target.value
-        });
-    }
+    // onChangeAge(event) {
+    //     this.setState({
+    //         age: event.target.value
+    //     });
+    // }
 
-    onChangeAddress(event) {
-        this.setState({
-            address: event.target.value
-        });
-    }
+    // onChangeAddress(event) {
+    //     this.setState({
+    //         address: event.target.value
+    //     });
+    // }
     handleSubmit(event) {
         console.log(this.state)
         var data = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            age: this.state.age,
-            address: this.state.address
+            name: this.state.userName,
+            password: this.state.password,
+            //age: this.state.age,
+            //address: this.state.address
         };
         event.preventDefault();
         userRegistrationService.createUser(data)
             .then(response => {
                 alert('You submitted successfully! ' + data.
-                    firstName + ' User is created');
+                    name + ' User is created');
                 this.setState({
                     id: response.data.id,
-                    firstName: response.data.firstName,
-                    lastName: response.data.lastName,
-                    age: response.data.age,
-                    address: response.data.address
+                    name: response.data.name,
+                    password: response.data.password,
+                   // age: response.data.age,
+                   // address: response.data.address
                 });
                 this.props.history.push("/list-all-users");
             })
@@ -125,9 +125,7 @@ export default class AddUser extends Component {
     }
     newUser() {
         this.setState({
-            id: null, firstName: "", lastName: "", age: "",
-            address: "",
-            createdDate: ""
+            id: null, name: "", password: "", 
         });
     }
 }
