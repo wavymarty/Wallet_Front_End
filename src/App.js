@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import ListUsers from './components/list-users.component';
 import Home from './components/home.component';
 import AddUser from './components/add-user.component';
+import ListTransactions from './components/list-transactions';
 export default function App() {
   return (
     <div className="App">
@@ -50,6 +51,7 @@ export default function App() {
               <Route path="/" index element={<Home />} />
               <Route path="/list-all-users" element={<ListUsers />} />
               <Route path="/add-user" element={<AddUser />} />
+              <Route path="/list-transactions" element={<ListTransactions/>}/>
             </Routes>
           </BrowserRouter>
         </div>
