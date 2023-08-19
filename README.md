@@ -81,6 +81,6 @@ docker build -f Dockerfile -t wallet .
 
 #### To run image in Windows OS
 
-winpty docker run -it -p 4000:3000 wallet-app
+winpty docker run -it -p 4000:3000 wallet
 
 
