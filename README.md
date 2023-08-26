@@ -83,4 +83,8 @@ docker build -f Dockerfile -t wallet .
 
 winpty docker run -it -p 4000:3000 wallet
 
+#### To run image in Linux
+
+docker run -it -p 4000:3000 wallet
+
 
