@@ -68,3 +68,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### To install dependencies run the follow comands: 
+npm install bootstrap
+
+npm install react-router-dom
+
+npm install axios
+#### To build container image run
+
+docker build -f Dockerfile -t wallet .
+
+#### To run image in Windows OS
+
+winpty docker run -it -p 4000:3000 wallet
+
+#### To run image in Linux
+
+docker run -it -p 4000:3000 wallet
+
+

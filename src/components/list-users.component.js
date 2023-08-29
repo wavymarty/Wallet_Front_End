@@ -25,22 +25,20 @@ export default class UsersList extends Component {
       });
   }
   deleteUser(user, index) {
-    UserDataService.deleteUser(user.id)
-      .then(response => {
-        alert('Deleted successfully! ' + user.
-          firstName);
+    UserDataService.deleteUser(user.id).then(response => {
+        alert('Deleted successfully! ' + user.firstName);
         this.retrieveUsers();
-      })
-      .catch(e => {
+      }).catch(e => {
         console.log(e.target);
       });
   }
   render() {
     const { users } = this.state;
     return (
-      <table class="table table-hover">
+      
+      <table className="table table-hover">
         <caption>List of users</caption>
-        <thead class="thead-dark">
+        <thead className="thead-dark">
           <tr>
             <th scope="col">#</th>
             <th scope="col">ID-DATABASE</th>
@@ -51,23 +49,23 @@ export default class UsersList extends Component {
           </tr>
         </thead>
         <tbody>
-          {users && users.map((user, index) => (
-            <tr>
+          {users && users.map((user,index) => (
+            <tr key={user.id}>
               <th scope="row">{index + 1}</th>
-              <td>{user.id}</td>
+              
+              <td >{user.id}</td>
               <td>{user.name}</td>
               <td>{user.password}</td>
               {/*<td>{user.address}</td>*/}
               <td>
                 <button type="button"
-                  onClick={() => this.
-                    deleteUser(user,
-                      index)}
-                  class="btn btn-danger
+                  onClick={() => this.deleteUser(user,index)
+                  }
+                  className="btn btn-danger
    custom-width"
                   key={index}
                 >
-                  <span class="glyphicon
+                  <span className="glyphicon
    glyphicon-remove">
                     Delete
                   </span>
@@ -77,6 +75,6 @@ export default class UsersList extends Component {
           ))}
         </tbody>
       </table>
-    );
+      );
   }
 }

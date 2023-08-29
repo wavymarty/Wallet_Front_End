@@ -1,16 +1,9 @@
 import axios from "axios";
-var root = "root";
-var password = "password";
 export default axios.create({
- baseURL: "http://localhost:8084/user",
+ withCredentials: true,
+ baseURL: "http://localhost:8084/user/",
  headers: {
- "Content-type": "application/json"
+ "Content-type": "application/json",
+ authorization: 'Basic ' + window.btoa(user + ":" + password)
  },
- auth: {
-
-    username: root,
-
-    password: password
-
- }
 });
