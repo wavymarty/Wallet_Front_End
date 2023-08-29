@@ -2,15 +2,15 @@ import React, { Component } from "react";
 export default class Home extends Component {
     render() {
         return (
-            <div class="container">
-                <div class="panel panel-default">
-                    <div class="alert alert-success">
+            <div className="container">
+                <div className="panel panel-default">
+                    <div className="alert alert-success">
                         <span class="lead">
                             Welcome to User Registration App
                         </span>
                     </div>
-                    <div class="panel-body ">
-                        <div class="alert alert-info">
+                    <div className="panel-body ">
+                        <div className="alert alert-info">
                             <ul>
                                 <li>
                                     Please click on

@@ -32,9 +32,9 @@ export default class ListTransactions extends Component {
     render() {
         const { transactions } = this.state;
         return (
-            <table class="table table-hover">
+            <table className="table table-hover">
                 <caption>List of transactions</caption>
-                <thead class="thead-dark">
+                <thead className="thead-dark">
                     <tr>
                         <th scope="col">TXID</th>
                         <th scope="col">SENDER</th>

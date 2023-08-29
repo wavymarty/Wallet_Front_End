@@ -1,6 +1,6 @@
 import './App.css';
 import ReactDOM from "react-dom/client";
-import React, { components } from 'react';
+//import React, { components } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ListUsers from './components/list-users.component';
@@ -11,38 +11,38 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header1">
-        <div class="page-header text-center">
+        <div className="page-header text-center">
           <h2>User Registration App</h2>
         </div>
       </header>
-      <div class="container-fluid">
+      <div className="container-fluid">
         <nav class="navbar bg-primary justify-contentcenter">
-          <div class="col-sm"></div>
+          <div className="col-sm"></div>
           <a href="/"
-            class="col-sm btn btn-outline-light"
+            className="col-sm btn btn-outline-light"
 
             role="button">
             Home
           </a>
-          <div class="col-sm"></div>
+          <div className="col-sm"></div>
           <a href="/list-all-users"
-            class="col-sm btn btn-outline-light"
+            className="col-sm btn btn-outline-light"
             role="button">
             List All Users
           </a>
-          <div class="col-sm"></div>
+          <div className="col-sm"></div>
           <a href="/add-user"
-            class="col-sm btn btn-outline-light"
+            className="col-sm btn btn-outline-light"
             role="button">
             Add User
           </a>
-          <div class="col-sm"></div>
+          <div className="col-sm"></div>
           <a href="/list-transactions"
-            class="col-sm btn btn-outline-light"
+            className="col-sm btn btn-outline-light"
             role="button">
             List Transactions
           </a>
-          <div class="col-sm"></div>
+          <div className="col-sm"></div>
         </nav>
         <br />
         <div className="container mt-3">
@@ -60,5 +60,5 @@ export default function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<App />);
